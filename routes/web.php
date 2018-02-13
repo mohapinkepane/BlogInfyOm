@@ -18,4 +18,34 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'PostController@index');
+
+// route::get('/posts/create', 'PostController@create')->name('create');
+// route::post('/posts', 'PostController@store')->name('store');
+
+// route::get('/posts/{post}','PostController@show')->name('show');
+
+// route::get('/posts/{post}/edit','PostController@edit')->name('edit');
+
+// route::patch('/posts/{post}', 'PostController@update')->name('update');
+
+// route::delete('/post/{post}', 'PostController@delete')->name('delete');
+
+
+
+
+Route::get('/home', ['as' =>'posts.index', 'uses' => 'PostController@index']);
+Route::get('/posts/create',['as' => 'posts.create', 'uses' => 'PostController@create']);
+Route::post('/posts', ['as' =>'posts.store', 'uses' => 'PostController@store']);
+Route::get('/posts/{post}', ['as' =>'posts.show', 'uses' => 'PostController@show']);
+Route::get('/posts/{post}/edit', ['as' =>'posts.edit', 'uses' => 'PostController@edit']);
+Route::patch('/posts/{post}', ['as' =>'posts.update', 'uses' => 'PostController@update']);
+Route::patch('/posts/{post}', ['as' =>'posts.delete', 'uses' => 'PostController@delete']);
+
+
+
+
+// Route::resource('/','PostController');
+
+Route::resource('posts', 'PostController');
