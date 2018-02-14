@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\Post;
 
 class PostController extends AppBaseController
 {
@@ -31,11 +32,15 @@ class PostController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $this->postRepository->pushCriteria(new RequestCriteria($request));
-        $posts = $this->postRepository->all();
+                
+                $this->postRepository->pushCriteria(new RequestCriteria($request));
+                $posts = $this->postRepository->all();
 
-        return view('posts.index')
-            ->with('posts', $posts);
+                return view('posts.index')
+               ->with('posts',$posts);
+
+    
+
     }
 
     /**

@@ -12,7 +12,7 @@
            <div class="box-body">
                <div class="row">
                    {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'patch']) !!}
-
+                   
                         @include('posts.fields')
 
                    {!! Form::close() !!}

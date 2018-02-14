@@ -41,7 +41,7 @@ Route::post('/posts', ['as' =>'posts.store', 'uses' => 'PostController@store']);
 Route::get('/posts/{post}', ['as' =>'posts.show', 'uses' => 'PostController@show']);
 Route::get('/posts/{post}/edit', ['as' =>'posts.edit', 'uses' => 'PostController@edit']);
 Route::patch('/posts/{post}', ['as' =>'posts.update', 'uses' => 'PostController@update']);
-Route::patch('/posts/{post}', ['as' =>'posts.delete', 'uses' => 'PostController@delete']);
+Route::delete('/posts/{post}', ['as' =>'posts.destroy', 'uses' => 'PostController@destroy']);
 
 
 
