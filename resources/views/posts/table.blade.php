@@ -13,7 +13,8 @@
                 {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
                 
                     <div class="card">
-                    <h5><b>{{$post->title}}</b></c></h5>  
+                    <h5><b>{{$post->title}}</b></h5> 
+                    <p class="blog-post-meta">{{$post->created_at->toformattedDateString()}}</p> 
 
                    <div class="form-group col-sm-12">
                     {{$post->body}}
