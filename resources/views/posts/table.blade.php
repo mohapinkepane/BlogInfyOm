@@ -28,7 +28,7 @@
                 </div>
                 {!! Form::close() !!}
                     &nbsp;
-                 @include('posts.comments')
+                 @include('comments.comments_crud_access')
             </td>
         </tr>
 

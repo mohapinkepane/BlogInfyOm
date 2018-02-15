@@ -1,5 +1,5 @@
                    
-         <hr>
+          <hr>
            <div class="comments">
                 <ul class ="list-group">
              @foreach($post->comments as $comment)
@@ -48,4 +48,4 @@
                         </div>
                  {{--  {{end of add coment comment}}  --}}
                         </div>
-            {{--  comments  --}}
+     {{--  comments  --}}
