@@ -33,7 +33,7 @@ Auth::routes();
 // route::delete('/post/{post}', 'PostController@delete')->name('delete');
 
 
-
+//post routes
 
 Route::get('/home', ['as' =>'posts.index', 'uses' => 'PostController@index']);
 Route::get('/posts/create',['as' => 'posts.create', 'uses' => 'PostController@create']);
@@ -42,10 +42,11 @@ Route::get('/posts/{post}', ['as' =>'posts.show', 'uses' => 'PostController@show
 Route::get('/posts/{post}/edit', ['as' =>'posts.edit', 'uses' => 'PostController@edit']);
 Route::patch('/posts/{post}', ['as' =>'posts.update', 'uses' => 'PostController@update']);
 Route::delete('/posts/{post}', ['as' =>'posts.destroy', 'uses' => 'PostController@destroy']);
-
-
-
-
-// Route::resource('/','PostController');
-
+Route::post('/posts/{post}/comments', ['as' => 'comments.store', 'uses' =>  'commentController@store']);
 Route::resource('posts', 'PostController');
+
+//comments routes
+Route::get('/comments/{comment}', ['as' => 'comments.show', 'uses' => 'commentController@show']);
+Route::get('/comments/{comment}/edit', ['as' => 'comments.edit', 'uses' => 'commentController@edit']);
+Route::patch('/comments/{comment}', ['as' => 'comments.update', 'uses' => 'commentController@update']);
+Route::delete('/comments/{comment}', ['as' => 'comments.destroy', 'uses' => 'commentController@destroy']);
