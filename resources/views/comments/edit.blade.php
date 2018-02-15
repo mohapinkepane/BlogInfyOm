@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Post
+            Comment
         </h1>
    </section>
    <div class="content">
@@ -11,9 +11,9 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'patch']) !!}
+                   {!! Form::model($comment, ['route' => ['comments.update', $comment->id], 'method' => 'patch']) !!}
                          {{csrf_field()}}
-                        @include('posts.fields')
+                        @include('comments.fields')
 
                    {!! Form::close() !!}
                </div>

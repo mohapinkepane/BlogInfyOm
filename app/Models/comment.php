@@ -1,40 +1,35 @@
 <?php
 
 namespace App\Models;
-
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Post
+ * Class comment
  * @package App\Models
- * @version February 13, 2018, 6:52 pm UTC
+ * @version February 14, 2018, 9:04 pm UTC
+ *
+ * @property  body
  */
-class Post extends Model
+class comment extends Model
 {
     use SoftDeletes;
 
-    public $table = 'posts';
+    public $table = 'comments';
     
 
     protected $dates = ['deleted_at'];
 
 
     public $fillable = [
-        'title',
-        'body'
+        'body','post_id'
     ];
-
-    //my mutations
-    public function comments()
+   
+    //my mutation
+    public function post()
     {
-        return $this->hasMany(comment::class);
-    }
+        return $this->belongsTo(Post::class);
 
-    public function addComment($body)
-    {
-
-        $this->comments()->create(compact('body'));
     }
 
     /**
@@ -43,7 +38,7 @@ class Post extends Model
      * @var array
      */
     protected $casts = [
-        'body' => 'string'
+        
     ];
 
     /**
@@ -52,9 +47,8 @@ class Post extends Model
      * @var array
      */
     public static $rules = [
-        'title' => 'required',
+         
         'body' => 'min:2'
     ];
 
-    
 }

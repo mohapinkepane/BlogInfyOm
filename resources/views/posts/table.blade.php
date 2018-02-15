@@ -10,8 +10,8 @@
       <tr>
 
             <td>
-                {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
-                
+                {!! Form::open(['route' => ['posts.destroy',$post->id], 'method' => 'delete']) !!}
+                    {{csrf_field()}}
                     <div class="card">
                     <h5><b>{{$post->title}}</b></h5> 
                     <p class="blog-post-meta">{{$post->created_at->toformattedDateString()}}</p> 
@@ -20,15 +20,20 @@
                     {{$post->body}}
                     </div>
                     </div>
-                 
+          
                 <div class='btn-group'>
                     <a href="{!! route('posts.show', [$post->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                     <a href="{!! route('posts.edit', [$post->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
                     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                 </div>
                 {!! Form::close() !!}
+                    &nbsp;
+                 @include('posts.comments')
             </td>
         </tr>
+
+
+
     @endforeach
     </tbody>
 </table>
