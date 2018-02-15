@@ -23,7 +23,8 @@ class Post extends Model
     public $fillable = [
         'title',
         'body',
-        'user_id'
+        'user_id',
+        'user_name'
     ];
 
     //my mutations
