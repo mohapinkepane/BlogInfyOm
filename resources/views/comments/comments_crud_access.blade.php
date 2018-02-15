@@ -16,9 +16,16 @@
                    
                     <div class='btn-group'>
                     <a href="{!! route('comments.show', [$comment->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                   
+                    @if(( Auth::user()->id)==$comment->user_id)
                     <a href="{!! route('comments.edit', [$comment->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
                     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
-                 </div>
+                    @else
+                     <a class='btn btn-default btn-xs' disabled ><i class="glyphicon glyphicon-edit"></i></a>
+                    {!! Form::button('<i class="glyphicon glyphicon-trash" ></i>', ['type' => 'submit','class' => 'btn btn-danger btn-xs','disabled'=>'disabled','onclick' => "return confirm('Are you sure?')"]) !!}
+                    @endif
+
+                </div>
                 {!! Form::close() !!}
                     &nbsp;
                      
@@ -39,6 +46,10 @@
                                 <div class="form-group">      
                                        <input type="hidden" name="post_id" value="{{$post->id}}">
                                 </div>
+                                <div class="form-group">      
+                                       <input type="hidden" name="user_id" value={!! Auth::user()->id !!}>
+                                </div>
+
                                 <div class="form-group">
                                         <button type="submit" class="btn btn-primary"> Add Commment</button>
                                 </div>

@@ -8,8 +8,10 @@
 
     <div class="form-group col-sm-12">
                <label for="body">Body</label>
-               <input type="text" class="form-control" id="body" name="body"  required>
-              
+               <input type="text" class="form-control" id="body" name="body"  required>       
+    </div>
+    <div class="form-group col-sm-12">      
+        <input type="hidden" name="user_id" value={!! Auth::user()->id !!}>
     </div>
 
 <div class="form-group col-sm-12">

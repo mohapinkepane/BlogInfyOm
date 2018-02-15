@@ -22,7 +22,7 @@ class comment extends Model
 
 
     public $fillable = [
-        'body','post_id'
+        'body','post_id','user_id'
     ];
    
     //my mutation

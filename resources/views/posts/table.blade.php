@@ -23,8 +23,15 @@
           
                 <div class='btn-group'>
                     <a href="{!! route('posts.show', [$post->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                   
+                    @if((Auth::user()->id)==$post->user_id)
                     <a href="{!! route('posts.edit', [$post->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
                     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    @else
+                    <a class='btn btn-default btn-xs' disabled ><i class="glyphicon glyphicon-edit"></i></a>
+                    {!! Form::button('<i class="glyphicon glyphicon-trash" ></i>', ['type' => 'submit','class' => 'btn btn-danger btn-xs','disabled'=>'disabled','onclick' => "return confirm('Are you sure?')"]) !!}
+                    @endif
+
                 </div>
                 {!! Form::close() !!}
                     &nbsp;
