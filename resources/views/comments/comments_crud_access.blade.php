@@ -6,7 +6,7 @@
                   
                    {!! Form::open(['route' => ['comments.destroy', $comment->id], 'method' => 'delete']) !!}
                     {{csrf_field()}}
-
+                    <text> {{$comment->user_name}} commented:</text> 
                     <li class="list-group-item">
                         <strong>
                              {{$comment->created_at->diffForHumans()}}: &nbsp;
@@ -49,7 +49,9 @@
                                 <div class="form-group">      
                                        <input type="hidden" name="user_id" value={!! Auth::user()->id !!}>
                                 </div>
-
+                                 <div class="form-group col-sm-12">      
+                                     <input type="hidden" name="user_name" value={!! Auth::user()->name !!}>
+                                 </div>
                                 <div class="form-group">
                                         <button type="submit" class="btn btn-primary"> Add Commment</button>
                                 </div>

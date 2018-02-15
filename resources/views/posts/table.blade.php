@@ -14,6 +14,7 @@
                     {{csrf_field()}}
                     <div class="card">
                     <h5><b>{{$post->title}}</b></h5> 
+                      <text>by {{$post->user_name}}</text> 
                     <p class="blog-post-meta">{{$post->created_at->toformattedDateString()}}</p> 
 
                    <div class="form-group col-sm-12">
