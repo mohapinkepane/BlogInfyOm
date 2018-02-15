@@ -41,15 +41,16 @@
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg"
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_oT2O_os9TU2Kpmx51EZXgWOpj7LF7SL152yi5JkNnp_2iOr"
                                  class="user-image" alt="User Image"/>
+                                 
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">{!! Auth::user()->name !!}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg"
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_oT2O_os9TU2Kpmx51EZXgWOpj7LF7SL152yi5JkNnp_2iOr"
                                      class="img-circle" alt="User Image"/>
                                 <p>
                                     {!! Auth::user()->name !!}
