@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>BLOG home page</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://wwpi.com/wp-content/uploads/2017/03/xWl5ACj3.png" type="image/png" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
