@@ -50,3 +50,7 @@ Route::get('/comments/{comment}', ['as' => 'comments.show', 'uses' => 'commentCo
 Route::get('/comments/{comment}/edit', ['as' => 'comments.edit', 'uses' => 'commentController@edit']);
 Route::patch('/comments/{comment}', ['as' => 'comments.update', 'uses' => 'commentController@update']);
 Route::delete('/comments/{comment}', ['as' => 'comments.destroy', 'uses' => 'commentController@destroy']);
+
+//adding pictures to profile
+Route::get('/editprofile', 'ProfileController@addpictureurl')->name('profiles.addpicture');
+Route::post('/savepictureurl', 'ProfileController@savepictureurl')->name('profiles.savepicture');
