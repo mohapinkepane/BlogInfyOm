@@ -5,8 +5,8 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_oT2O_os9TU2Kpmx51EZXgWOpj7LF7SL152yi5JkNnp_2iOr" class="img-circle"
-                     alt="User Image"/>
+               
+                     <img src="{{Storage::url(Auth::user()->image)}}" class="img-circle" alt="User Image"/>
             </div>
 
             
